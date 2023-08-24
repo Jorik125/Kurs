@@ -1,0 +1,67 @@
+*{
+    font-family: 'Calibri';
+    font-size: 18px;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;               /* ширина scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #3A3A3A;    /* цвет плашки */
+}
+
+.header-logo {
+    background: #3A3A3A;
+    padding: 5px;
+}
+
+.container-header{
+    display: flex;
+}
+
+.ul-header{
+    display: flex;
+    margin-left: 25%;
+    margin-top: 10px;
+}
+
+.li-header{
+    list-style: none;
+    margin-left: 100px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #810707;
+    transition: color 0.5s;
+}
+
+.logo-a{
+    margin-top: 5px;
+}
+
+.container-footer{
+    position: relative;
+    top: 250px;
+}
+
+.ul-footer{
+
+}
+
+.li-footer{
+    list-style: none;
+    color: white;
+    margin-top: 20px;
+    font-family: "Calibri";
+    font-weight: bold;
+    font-size: 20px;
+}
