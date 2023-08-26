@@ -71,4 +71,10 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+    public function actionTickets(){
+        return $this->render('tickets',[
+            'model'=>TypeTickets::find()->asArray()->all()
+        ]);
+    }
+
 }

@@ -39,8 +39,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             </a>
 
                 <ul class="ul-header">
-                    <li class="li-header"><?= \yii\helpers\Html::a('О нас','../site/about') ?></li>
-                    <li class="li-header"><a href="">Билеты</a></li>
+                    <li class="li-header"><?= Html::a('О нас','../site/about') ?></li>
+                    <li class="li-header"><?= Html::a('Билеты','../site/tickets') ?>
 <!--                    <li>Поддержка 8 800 9550 3334</li>-->
                 </ul>
         </div>
@@ -75,8 +75,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
         <div class="col mb-3">
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#">О нас</a></li>
-            <li class="nav-item mb-2"><a href="#">Билеты</a></li>
+            <li class="nav-item mb-2"><?= Html::a('О нас','../site/about') ?></li>
+            <li class="nav-item mb-2"><?= Html::a('Билеты','../site/tickets') ?></li>
             <li class="nav-item mb-2"><a href="#">Для администратора</a></li>
           </ul>
         </div>
