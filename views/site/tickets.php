@@ -3,7 +3,8 @@
 $this->title = 'Билеты';
 ?>
 
-<h1><?= $this->title ?></h1>
+<div class="container">
+    <h1><?= $this->title ?></h1>
 
 <p>Для того чтобы попасть на Electronic Entertainment Expo необходим специальный билет, компания E Three предлагает на выбор три билета, каждый из которых имеет свою привилегию.</p>
 
@@ -23,3 +24,4 @@ $this->title = 'Билеты';
         <?php } ?>
     </div>
   </div>
+</div>

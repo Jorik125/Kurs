@@ -4,50 +4,37 @@
 
 $this->title = 'Главная страница';
 ?>
-<div class="site-index">
 
-    <div class="jumbotron text-center bg-transparent mt-5 mb-5">
-        <h1 class="display-4">Congratulations!</h1>
+<div style="width: auto; height: auto; padding: 20px">
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="https://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4 mb-3">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4 mb-3">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
+    <video src="<?= \yii\helpers\Url::to('img/videoE3.mp4') ?>" style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -9999" autoplay loop muted></video>
+    <div class="container" align="center">
+        <h1 align="center" style="color: white">Ежегодная выставка Electronic Entertainment Expo пройдет 01.01.2023. Выставка проходит во всех странах мира. Успей заказать билет! </h1>
+        <?= \yii\helpers\Html::button('Заказать билет',['class'=>'btn','style'=>'background: #810707; color: white']) ?>
     </div>
 </div>
+
+<h3 align="center" style="margin-top: 20px; color: white">На выставке Electronic Entertainment Expo будет представлено </h3>
+
+<div class="container px-4 py-5" id="featured-3">
+    <div class="row g-4 py-5 row-cols-lg-3">
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center f-2 mb-3">
+            <img src="<?= \yii\helpers\Url::to('img/pc.png') ?>" alt="Компуктер" style="border-radius: 10px; ">
+        </div>
+        <p style="color: white">Компьютеры нового поколения</p>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+          <img src="<?= \yii\helpers\Url::to('img/fallout.png') ?>" alt="Fallout" style="border-radius: 10px; ">
+        </div>
+        <p style="color: white">Игровые новинки и косплеи</p>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+          <img src="<?= \yii\helpers\Url::to('img/pinpong.png') ?>" alt="PinPong" style="border-radius: 10px;">
+        </div>
+        <p style="color: white">Новые технологии в сфере IT</p>
+      </div>
+    </div>
+  </div>

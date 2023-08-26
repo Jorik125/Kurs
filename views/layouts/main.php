@@ -49,12 +49,10 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 </header>
 
 <main id="main" class="flex-shrink-0" role="main">
-    <div class="container">
-        <?= $content ?>
-    </div>
+    <?= $content ?>
 </main>
 
-<div style="background: #3A3A3A; color: white" class="footer-container">
+<div style="background: #3A3A3A; color: white; bottom: 0" class="footer-container">
 
     <div class="container">
       <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
