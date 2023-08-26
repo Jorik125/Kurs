@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\News;
 use app\models\TypeTickets;
 use app\models\User;
 use Yii;
@@ -65,7 +66,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this->render('index',[
+            'model'=>News::find()->asArray()->all()
+        ]);
     }
 
     public function actionAbout(){

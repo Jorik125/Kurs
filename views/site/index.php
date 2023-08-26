@@ -16,7 +16,7 @@ $this->title = 'Главная страница';
 
 <h3 align="center" style="margin-top: 20px; color: white">На выставке Electronic Entertainment Expo будет представлено </h3>
 
-<div class="container px-4 py-5" id="featured-3">
+<div style="margin-left: 13%" class="container px-4" id="featured-3">
     <div class="row g-4 py-5 row-cols-lg-3">
       <div class="feature col">
         <div class="feature-icon d-inline-flex align-items-center justify-content-center f-2 mb-3">
@@ -38,3 +38,17 @@ $this->title = 'Главная страница';
       </div>
     </div>
   </div>
+
+<div class="container">
+    <h1 align="center" style="color: white">Новости из мира игр и компьютерных игр</h1>
+
+    <?php foreach ($model as $news) {
+        $img = unserialize($news['img']);
+        ?>
+        <p align="center" style="color: white; font-size: 20px"><?= $news['header'] ?></p>
+        <div align="center">
+            <img style="border-radius: 20px; padding: 10px" src="<?= \yii\helpers\Url::to('img/'.$img->name) ?>" alt="">
+        </div>
+        <hr>
+    <?php } ?>
+</div>
