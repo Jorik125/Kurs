@@ -27,8 +27,18 @@ class News extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['header', 'img'], 'string', 'max' => 500],
+            [['header'], 'string', 'max' => 500],
         ];
+    }
+
+    public function upload()
+    {
+        if ($this->validate()) {
+            $this->img->saveAs('img/' . $this->img->baseName . '.' . $this->img->extension);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
