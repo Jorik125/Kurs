@@ -47,21 +47,3 @@ a:hover{
 .logo-a{
     margin-top: 5px;
 }
-
-.container-footer{
-    position: relative;
-    top: 250px;
-}
-
-.ul-footer{
-
-}
-
-.li-footer{
-    list-style: none;
-    color: white;
-    margin-top: 20px;
-    font-family: "Calibri";
-    font-weight: bold;
-    font-size: 20px;
-}

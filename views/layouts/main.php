@@ -9,6 +9,7 @@ use yii\bootstrap5\Breadcrumbs;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 
@@ -34,11 +35,11 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     <div class="header-logo">
         <div class="container container-header">
             <a class="logo-a" href="/">
-                <img src="<?= \yii\helpers\Url::to('img/logo.png') ?>" alt="Логотип">
+                <?= Html::img(Yii::getAlias('@web').'/img/logo.png') ?>
             </a>
 
                 <ul class="ul-header">
-                    <li class="li-header"><a href="">О нас</a></li>
+                    <li class="li-header"><?= \yii\helpers\Html::a('О нас','../site/about') ?></li>
                     <li class="li-header"><a href="">Билеты</a></li>
 <!--                    <li>Поддержка 8 800 9550 3334</li>-->
                 </ul>
@@ -53,19 +54,45 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     </div>
 </main>
 
-<footer id="footer" class="mt-auto py-3 bg-light">
+<div style="background: #3A3A3A; color: white" class="footer-container">
 
-    <img style="width: 100%; position: absolute" src="<?= \yii\helpers\Url::to('img/footer.png') ?>" alt="">
+    <div class="container">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+        <div class="col mb-3">
+          <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+              <?= Html::img(Yii::getAlias('@web').'/img/logo.png') ?>
+          </a>
+          <p class="text-body-white">© 2023</p>
+        </div>
 
-    <div class="container container-footer">
-        <a href="/"><img style="width: 9%" src="<?= \yii\helpers\Url::to('img/logo.png') ?>" alt=""></a>
-        <ul class="ul-footer">
-            <li class="li-footer"><a href="#">О нас</a></li>
-            <li class="li-footer"><a href="">Билеты</a></li>
-            <li class="li-footer"><a href="">Для администратора</a></li>
-        </ul>
+        <div class="col mb-3">
+
+        </div>
+
+        <div class="col mb-3">
+
+        </div>
+
+        <div class="col mb-3">
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#">О нас</a></li>
+            <li class="nav-item mb-2"><a href="#">Билеты</a></li>
+            <li class="nav-item mb-2"><a href="#">Для администратора</a></li>
+          </ul>
+        </div>
+
+        <div class="col mb-3">
+          <h5>Связь с нами</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="mailto:ethree2023@mail.ru">Email: ethree2023@mail.ru</a></li>
+            <li class="nav-item mb-2">Телефон: 8 800 955 3334</li>
+            <li class="nav-item mb-2">Адрес: г. Кострома, ул. Советская, д. 147</li>
+          </ul>
+        </div>
+      </footer>
     </div>
-</footer>
+
+</div>
 
 <?php $this->endBody() ?>
 </body>
