@@ -10,7 +10,7 @@ $this->title = 'Главная страница';
     <video src="<?= \yii\helpers\Url::to('img/videoE3.mp4') ?>" style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -9999" autoplay loop muted></video>
     <div class="container" align="center">
         <h1 align="center" style="color: white">Ежегодная выставка Electronic Entertainment Expo пройдет 01.01.2023. Выставка проходит во всех странах мира. Успей заказать билет! </h1>
-        <?= \yii\helpers\Html::button('Заказать билет',['class'=>'btn','style'=>'background: #810707; color: white']) ?>
+        <a href="../site/tickets"><?= \yii\helpers\Html::button('Заказать билет',['class'=>'btn','data-bs-toggle'=>'modal','data-bs-target'=>'#staticBackdrop','style'=>'background: #810707; color: white']) ?></a>
     </div>
 </div>
 

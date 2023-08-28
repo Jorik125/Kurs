@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\News;
+use app\models\TicketsBuy;
 use app\models\TypeTickets;
 use app\models\User;
 use Yii;
@@ -67,7 +68,8 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index',[
-            'model'=>News::find()->asArray()->all()
+            'model'=>News::find()->asArray()->all(),
+            'ticketsModel'=>TypeTickets::find()->asArray()->all()
         ]);
     }
 
@@ -79,6 +81,13 @@ class SiteController extends Controller
     public function actionTickets(){
         return $this->render('tickets',[
             'model'=>TypeTickets::find()->asArray()->all()
+        ]);
+    }
+
+    public function actionPayment($id){
+        return $this->render('payment',[
+            'ticket'=>TypeTickets::findOne($id),
+            'model'=>new TicketsBuy()
         ]);
     }
 

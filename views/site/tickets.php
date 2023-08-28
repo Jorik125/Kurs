@@ -20,6 +20,7 @@ $this->title = 'Билеты';
                     <p><?= $info ?></p>
                 <?php } ?>
                 <h3>Цена <?= $tickets['price'] ?></h3>
+                  <a href="<?= \yii\helpers\Url::to(['payment','id'=>$tickets['id']]) ?>"><?= \yii\helpers\Html::button('Купить билет',['class'=>'btn','style'=>'color: white; background: #810707']) ?></a>
               </div>
         <?php } ?>
     </div>

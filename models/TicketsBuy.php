@@ -31,7 +31,7 @@ class TicketsBuy extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['type_tickets_id'], 'required'],
+            [['name','email','card_number'], 'required','message'=>'Данное поле должно быть заполненным'],
             [['type_tickets_id'], 'integer'],
             [['name', 'card_number'], 'string', 'max' => 45],
             [['email'], 'string', 'max' => 100],
@@ -46,9 +46,9 @@ class TicketsBuy extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'email' => 'Email',
-            'card_number' => 'Card Number',
+            'name' => 'Имя',
+            'email' => 'Почта',
+            'card_number' => 'Номер карты',
             'type_tickets_id' => 'Type Tickets ID',
         ];
     }

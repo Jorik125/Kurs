@@ -47,3 +47,9 @@ a:hover{
 .logo-a{
     margin-top: 5px;
 }
+
+input:checked + label > img {
+    -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
