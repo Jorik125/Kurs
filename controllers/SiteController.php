@@ -85,10 +85,27 @@ class SiteController extends Controller
     }
 
     public function actionPayment($id){
-        return $this->render('payment',[
-            'ticket'=>TypeTickets::findOne($id),
-            'model'=>new TicketsBuy()
-        ]);
+
+        $model = new TicketsBuy();
+
+        if ($this->request->post()){
+            $post = $this->request->post();
+
+            $model->name = $post['TicketsBuy']['name'];
+            $model->email = $post['TicketsBuy']['email'];
+            $model->card_number = $post['TicketsBuy']['card_number'];
+            $model->type_tickets_id = $post['TicketsBuy']['type_tickets_id'];
+
+            $model->save();
+
+            return $this->redirect('/');
+        } else{
+            return $this->render('payment',[
+                'ticket'=>TypeTickets::findOne($id),
+                'model'=>$model
+            ]);
+        }
+
     }
 
 }

@@ -32,8 +32,8 @@ class TicketsBuy extends \yii\db\ActiveRecord
     {
         return [
             [['name','email','card_number'], 'required','message'=>'Данное поле должно быть заполненным'],
-            [['type_tickets_id'], 'integer'],
-            [['name', 'card_number'], 'string', 'max' => 45],
+            [['type_tickets_id', 'card_number'], 'integer','message'=>'В данном поле принимаются только цифры'],
+            [['name'], 'string', 'max' => 45],
             [['email'], 'string', 'max' => 100],
             [['type_tickets_id'], 'exist', 'skipOnError' => true, 'targetClass' => TypeTickets::class, 'targetAttribute' => ['type_tickets_id' => 'id']],
         ];
