@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\News;
+use app\models\TicketsBuy;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -139,6 +140,15 @@ class AdminController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    public function actionBuytickets(){
+
+        $model = TicketsBuy::find()->asArray()->all();
+
+        return $this->render('buytickets',[
+            'model'=>$model
+        ]);
     }
 
     /**

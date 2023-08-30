@@ -95,6 +95,7 @@ class SiteController extends Controller
             $model->email = $post['TicketsBuy']['email'];
             $model->card_number = $post['TicketsBuy']['card_number'];
             $model->type_tickets_id = $post['TicketsBuy']['type_tickets_id'];
+            $model->date_buy = date('Y-m-d');
 
             $model->save();
 

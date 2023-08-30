@@ -12,6 +12,7 @@ use Yii;
  * @property string|null $email
  * @property string|null $card_number
  * @property int $type_tickets_id
+ * @property date $date
  *
  * @property TypeTickets $typeTickets
  */

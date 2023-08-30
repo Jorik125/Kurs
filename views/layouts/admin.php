@@ -39,6 +39,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         'options' => ['class' => 'navbar-nav'],
         'items' => [
             ['label' => 'На главную страницу', 'url' => ['/site/index']],
+            ['label' => 'Новости', 'url' => ['/admin/index']],
+            ['label' => 'Купленные билеты','url'=>['/admin/buytickets']]
         ]
     ]);
     NavBar::end();
