@@ -32,18 +32,31 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
 <header id="header">
     <?php
-    NavBar::begin([
-        'options' => ['class' => 'navbar-expand-md navbar-dark bg-dark fixed-top']
-    ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav'],
-        'items' => [
-            ['label' => 'На главную страницу', 'url' => ['/site/index']],
-            ['label' => 'Новости', 'url' => ['/admin/index']],
-            ['label' => 'Купленные билеты','url'=>['/admin/buytickets']]
-        ]
-    ]);
-    NavBar::end();
+    if (!Yii::$app->user->isGuest) {
+        NavBar::begin([
+            'options' => ['class' => 'navbar-expand-md navbar-dark bg-dark fixed-top']
+        ]);
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav'],
+            'items' => [
+                ['label' => 'На главную страницу', 'url' => ['/admin/logout']],
+                ['label' => 'Новости', 'url' => ['/admin/index']],
+                ['label' => 'Купленные билеты','url'=>['/admin/buytickets']]
+            ]
+        ]);
+        NavBar::end();
+    } else{
+        NavBar::begin([
+            'options' => ['class' => 'navbar-expand-md navbar-dark bg-dark fixed-top']
+        ]);
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav'],
+            'items' => [
+                ['label' => 'На главную страницу', 'url' => ['/site']],
+            ]
+        ]);
+        NavBar::end();
+    }
     ?>
 </header>
 

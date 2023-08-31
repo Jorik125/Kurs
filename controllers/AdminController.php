@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\LoginForm;
 use app\models\News;
 use app\models\TicketsBuy;
 use yii\data\ActiveDataProvider;
@@ -32,6 +33,19 @@ class AdminController extends Controller
                 ],
             ]
         );
+    }
+
+    public function actionLogin(){
+
+        $model = new LoginForm();
+
+        if ($model->load(\Yii::$app->request->post()) && $model->login()){
+            return $this->redirect('/admin');
+        }
+
+        return $this->render('login',[
+            'model'=>$model
+        ]);
     }
 
     /**
@@ -165,5 +179,11 @@ class AdminController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionLogout(){
+        \Yii::$app->user->logout();
+
+        return $this->redirect('../site');
     }
 }

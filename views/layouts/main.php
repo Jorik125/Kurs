@@ -76,7 +76,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
           <ul class="nav flex-column">
             <li class="nav-item mb-2"><?= Html::a('О нас','../site/about') ?></li>
             <li class="nav-item mb-2"><?= Html::a('Билеты','../site/tickets') ?></li>
-            <li class="nav-item mb-2"><?= Html::a('Для администрации','../admin') ?></li>
+            <li class="nav-item mb-2"><?= Html::a('Для администрации','../admin/login') ?></li>
           </ul>
         </div>
 
