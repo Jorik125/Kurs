@@ -8,6 +8,7 @@ use app\models\TypeTickets;
 use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
@@ -16,6 +17,8 @@ use app\models\ContactForm;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+use Endroid\QrCode\QrCode;
+use Endroid\QrCode\Writer\PngWriter;
 
 class SiteController extends Controller
 {
@@ -117,6 +120,7 @@ class SiteController extends Controller
 
         $mail = new PHPMailer(true);
         $typeTicket = TypeTickets::findOne($idTypeTicket);
+        $this->qrGenerate($modelBuyTickets, $typeTicket);
 
             try {
                 //Server settings
@@ -133,6 +137,9 @@ class SiteController extends Controller
                 //Recipients
                 $mail->setFrom($modelBuyTickets->email, 'E Three comp');
                 $mail->addAddress($modelBuyTickets->email, 'Daniil');     //Add a recipient
+
+                //Attachments
+                $mail->addAttachment('img/qr-code.png');
 
                 //Content
                 $mail->isHTML(true);                                  //Set email format to HTML
@@ -159,9 +166,24 @@ class SiteController extends Controller
 
                 $mail->send();
                 echo 'Message has been sent';
+
             } catch (Exception $e){
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
             }
+    }
+
+    public function qrGenerate($modelBuyTickets, $typeTicket){
+
+        $text = 'Билет '.$typeTicket->name.', купленный по цене '.$typeTicket->price.' на имя '.$modelBuyTickets->name.' дата '.$modelBuyTickets->date_buy;
+
+        $qrCode = QrCode::create($text);
+
+        $writer = new PngWriter();
+        $result = $writer->write($qrCode);
+
+        header("Content-Type: ". $result->getMimeType());
+
+        $result->saveToFile('img/qr-code.png');
     }
 
 }
