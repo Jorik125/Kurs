@@ -22,9 +22,9 @@ $this->title = 'Вход';
                         'id'=>'LoginForm'
                 ])?>
 
-                <?= $form->field($model, 'login')?>
+                <?= $form->field($model, 'login')->textInput(['class'=>'form-control login'])?>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+                <?= $form->field($model, 'password')->passwordInput(['class'=>'form-control password']) ?>
 
                 <div class="form-group">
                     <div>

@@ -55,6 +55,9 @@ class AdminController extends Controller
      */
     public function actionIndex()
     {
+        if (\Yii::$app->user->isGuest)
+            return $this->redirect('/admin/login');
+
         $dataProvider = new ActiveDataProvider([
             'query' => News::find(),
             /*
