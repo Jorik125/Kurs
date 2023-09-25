@@ -2,8 +2,8 @@ actor: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: http://127.0.0.1:8080/
-            browser: firefox
+            url: http://localhost:8081/
+            browser: chrome
         - Yii2:
             part: orm
             entryScript: index-test.php
