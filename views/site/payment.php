@@ -13,9 +13,9 @@ $this->title = 'Покупка билета';
 
     <div class="container" style="color: white; padding: 10px" align="center">
         <?php $form = ActiveForm::begin() ?>
-                <?= $form->field($model, 'name')->textInput(['placeholder'=>'Имя','style'=>'width: 30%'])->label(false) ?>
-                <?= $form->field($model, 'email')->input('email',['placeholder'=>'Почта','style'=>'margin-top: 20px; width: 30%'])->label(false) ?>
-                <?= $form->field($model, 'card_number')->textInput(['placeholder'=>'Номер карты','style'=>'margin-top: 20px; width: 30%'])->label(false) ?>
+                <?= $form->field($model, 'name')->textInput(['placeholder'=>'Имя','style'=>'width: 30%','autocomplete'=>'off'])->label(false) ?>
+                <?= $form->field($model, 'email')->input('email',['placeholder'=>'Почта','style'=>'margin-top: 20px; width: 30%','autocomplete'=>'off'])->label(false) ?>
+                <?= $form->field($model, 'card_number')->textInput(['placeholder'=>'Номер карты','style'=>'margin-top: 20px; width: 30%','autocomplete'=>'off'])->label(false) ?>
                 <?= $form->field($model, 'type_tickets_id')->textInput(['value'=>$ticket->id, 'type'=>'hidden'])->label(false) ?>
                 <div align="center">
                     <?= \yii\helpers\Html::submitButton('Купить',['class'=>'btn','style'=>'color: white; background: #810707; width: 10%; margin-bottom: 10px; margin-top: 20px']) ?>
